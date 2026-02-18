@@ -18,7 +18,7 @@ def main(page: ft.Page):
         content=display,
         bgcolor=ft.Colors.BLACK12,
         height=80,
-        alignment=ft.alignment.Alignment(0, 0),
+        alignment=ft.alignment.Alignment(1, 0),
         border=ft.border.all(2, ft.Colors.RED)
     )
 
