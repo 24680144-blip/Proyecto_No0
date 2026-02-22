@@ -53,14 +53,44 @@ El método `reset()` devuelve la calculadora a su estado inicial:
 
 
      Unidad I:
-  1.1 Interfaz Gráfica de Usuario (GUI) con Flet
+
+       1.1 Interfaz Gráfica de Usuario (GUI) con Flet
 La Interfaz Gráfica de Usuario es el conjunto de elementos visuales que permiten la interacción entre el usuario y el sistema. En Flet, esto se construye mediante un árbol de controles (widgets).
 
 Flet es un framework en el cual no necesitamos HTML o CSS complejo. La interfaz se define mediante una función principal (usualmente llamada main) que recibe un objeto page.
+En Flet, a diferencia de otros frameworks de escritorio, la interfaz no se "dibuja" píxel por píxel manualmente, sino que se construye mediante una jerarquía de controles que se renderizan usando el motor de Flutter.
+     
+     La estructura básica y el Grafo de Controles
+Cada aplicación que hicimos (desde la calculadora básica hasta el registro) sigue este flujo:
 
-<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/be5444ce-9b04-4943-8f45-11e7595003db" />
+Importación: import flet as ft.
+Punto de entrada: Una función main(page: ft.Page).
+Definición de Controles: Instanciar objetos como ft.TextField() o ft.ElevatedButton().
+Integración: Añadir los controles a la página con page.add() o page.controls.append().
+
+     Aqui un ejemplo de como se usa el concepto de organizar elementos: 
+<p align="center">
+     <img width="800" height="535" alt="image" src="https://github.com/user-attachments/assets/6d14d577-cf45-424b-b9a0-c0c1323a2fea" />
+</p>
+
+     Propiedades fundamentales del contenedor Page
+Es importante recordar que page no es solo un lienzo vacío, tiene propiedades que controlan la experiencia del usuario (UX):
+
+page.theme_mode: Usado en nuestra calculadora para alternar entre ft.ThemeMode.LIGHT y DARK.
+page.vertical_alignment: Lo usamos en el Chat para centrar los elementos o enviarlos al fondo.
+page.padding: Espaciado interno que evita que los botones toquen los bordes de la ventana.
+
+     Layout Containers: El esqueleto de los proyectos
+Usamos tres formas de organizar la interfaz:
+
+Contenedor,Uso en nuestros códigos,Característica Técnica
+ft.Column,Registro de Usuario,Alinea elementos uno debajo de otro. Ideal para formularios.
+ft.Row,Botones de la Calculadora,Alinea elementos de izquierda a derecha. Usamos expand=True para que los botones llenen el ancho.
+ft.Stack,Interfaz del Chat,Permite encimar elementos. Útil para poner un botón flotante sobre una lista de mensajes.
+
 
 
 Desarrollado con ❤️ usando Python y Flet.
-
+<p align="center">
+</p>
 
