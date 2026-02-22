@@ -51,4 +51,16 @@ El método `reset()` devuelve la calculadora a su estado inicial:
 - Resetea el operando acumulado a `0`.
 - Marca `new_operand` como `True` para que la próxima entrada numérica limpie la pantalla.
 
+
+     Unidad I:
+  1.1 Interfaz Gráfica de Usuario (GUI) con Flet
+La Interfaz Gráfica de Usuario es el conjunto de elementos visuales que permiten la interacción entre el usuario y el sistema. En Flet, esto se construye mediante un árbol de controles (widgets).
+
+Flet es un framework en el cual no necesitamos HTML o CSS complejo. La interfaz se define mediante una función principal (usualmente llamada main) que recibe un objeto page.
+
+<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/be5444ce-9b04-4943-8f45-11e7595003db" />
+
+
 Desarrollado con ❤️ usando Python y Flet.
+
+
