@@ -91,6 +91,21 @@ En el ejercicio del Chat, aprendimos que la estética no es solo lujo, es funcio
 
 expand: Esta propiedad es mágica. Si a la lista de mensajes del Chat le poníamos expand=True, Flet le ordenaba ocupar todo el espacio sobrante, empujando la caja de texto hacia abajo.
 spacing y alignment: Controlan el "aire" entre los controles. En la calculadora, un spacing=5 evitaba que los botones parecieran una sola masa gris.
+Para el tema 1.1, el Registro de Usuario es el mejor ejemplo de cómo los componentes se organizan en una estructura limpia y funcional.
+
+Python
+ Definición de la estructura visual (1.1)
+page.add(
+    ft.Column([
+        ft.Text("REGISTRO DE USUARIO", size=25, weight="bold"),
+        ft.TextField(label="Nombre Completo", icon=ft.icons.PERSON),
+        ft.TextField(label="Correo Electrónico", icon=ft.icons.EMAIL),
+        ft.ElevatedButton("Finalizar Registro", icon=ft.icons.SAVE)
+    ], horizontal_alignment=ft.CrossAxisAlignment.CENTER)
+)
+
+<img width="1570" height="757" alt="image" src="https://github.com/user-attachments/assets/ce6a5912-1875-4e51-b1a9-7084ece27ba2" />
+
 
 ---- 1.2 y 1.3 Eventos y su manejo 
      
@@ -149,6 +164,25 @@ Existen dos formas de capturar el teclado:
 <p align="center">
 <img width="691" height="238" alt="image" src="https://github.com/user-attachments/assets/6c4b652a-53f5-42fd-8149-d44ff3dd872b" />
 </p>
+
+La Calculadora es la prueba reina del manejo de eventos. Aquí aplicamos la lógica de detectar qué botón se presionó y procesar la operación matemática.
+
+Código Clave (Lógica de Eventos):
+
+Python
+def button_click(e):
+    # e.control.data contiene el valor del botón (1, 2, +, etc.)
+    data = e.control.data
+    if data == "C":
+        result_field.value = "0"
+    elif data == "=":
+        result_field.value = str(eval(result_field.value)) # Resolución de operación
+    else:
+        result_field.value = result_field.value + data
+    page.update()
+
+<img width="1552" height="732" alt="image" src="https://github.com/user-attachments/assets/e78d9904-79f5-4180-bb3b-62be6b108914" />
+
 
   Manejo de Componentes Gráficos de Control (1.4)
 En Flet, cada componente (Control) es una clase de Python que hereda propiedades de una jerarquía de Flutter. 
